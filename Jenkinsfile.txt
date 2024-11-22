@@ -1,24 +1,30 @@
-pipeline {
+ pipeline {
     agent any
+    
     stages {
-        stage('Deploy') {
+        stage('Clone') {
             steps {
-               echo "Test successful"
-              bat "mvn compile"
+                echo 'Release'
             }
         }
         stage('Build') {
             steps {
-               echo "build successful"
-              bat "mvn clean"
+                echo 'Building project…'
+                
             }
         }
         stage('Test') {
             steps {
-                echo "Test successful"
-              bat "mvn test"
+                echo 'Test project…'
+
+
             }
         }
-        
+        stage('Deploy') {
+            steps {
+                echo 'Deploy project…'
+
+            }
+        }
     }
 }
